@@ -4,3 +4,4 @@ stops.txt
 *.cfg
 *.log
 *.pyc
+*.env
