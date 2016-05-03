@@ -27,8 +27,7 @@ app.config.update(
 # app.config.from_envvar('MTA_SETTINGS')
 app.config["MTA_KEY"] = os.environ['MTA_KEY']
 app.config['STATIONS_FILE'] = './stations.json'
-
-
+app.config['CROSS_ORIGIN'] = "*"
 
 # set debug logging
 if app.debug:
