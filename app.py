@@ -23,7 +23,7 @@ app.config.update(
     CACHE_SECONDS=60,
     THREADED=True
 )
-app.config.from_envvar('MTA_SETTINGS')
+# app.config.from_envvar('MTA_SETTINGS')
 
 
 # set debug logging

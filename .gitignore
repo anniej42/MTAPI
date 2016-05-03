@@ -1,5 +1,6 @@
 .venv
 *.sublime-*
 stops.txt
+*.cfg
 *.log
 *.pyc
