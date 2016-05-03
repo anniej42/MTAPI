@@ -18,16 +18,20 @@ import logging
 import os
 
 app = Flask(__name__)
-app.config.update(
-    MAX_TRAINS=10,
-    MAX_MINUTES=30,
-    CACHE_SECONDS=60,
-    THREADED=True
-)
+
 # app.config.from_envvar('MTA_SETTINGS')
 app.config["MTA_KEY"] = os.environ['MTA_KEY']
 app.config['STATIONS_FILE'] = './stations.json'
 app.config['CROSS_ORIGIN'] = "*"
+app.debug = True;
+
+app.config.update(
+    MAX_TRAINS=10,
+    MAX_MINUTES=30,
+    CACHE_SECONDS=60,
+    THREADED=True,
+    DEBUG=True
+)
 
 # set debug logging
 if app.debug:
