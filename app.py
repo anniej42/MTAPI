@@ -15,6 +15,7 @@ from flask.json import JSONEncoder
 from datetime import datetime
 from functools import wraps
 import logging
+import os
 
 app = Flask(__name__)
 app.config.update(
@@ -24,6 +25,9 @@ app.config.update(
     THREADED=True
 )
 # app.config.from_envvar('MTA_SETTINGS')
+app.config["MTA_KEY"] = os.environ['MTA_KEY']
+app.config['STATIONS_FILE'] = os.environ['STATIONS_FILE']
+
 
 
 # set debug logging
