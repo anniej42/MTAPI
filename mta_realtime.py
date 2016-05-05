@@ -26,6 +26,7 @@ class MtaSanitizer(object):
         self._routes = {}
         self._read_lock = threading.RLock()
         self._update_lock = threading.Lock()
+        self._last_update = datetime.datetime.fromtimestamp(0)
         self.logger = logging.getLogger(__name__)
 
         # initialize the stations database
