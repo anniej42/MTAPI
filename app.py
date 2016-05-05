@@ -20,7 +20,12 @@ import os
 app = Flask(__name__)
 
 # app.config.from_envvar('MTA_SETTINGS')
-app.config["MTA_KEY"] = os.environ['MTA_KEY']
+
+on_heroku = False
+if 'MTA_KEY' in os.environ:
+    on_heroku = True
+    app.config["MTA_KEY"] = os.environ['MTA_KEY']
+
 app.config['STATIONS_FILE'] = './stations.json'
 app.config['CROSS_ORIGIN'] = "*"
 app.debug = True;
@@ -37,6 +42,9 @@ app.config.update(
 if app.debug:
     logging.basicConfig(level=logging.INFO,
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+
+print app.config["MTA_KEY"]
+print app.config
 
 class CustomJSONEncoder(JSONEncoder):
 
