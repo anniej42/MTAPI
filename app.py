@@ -21,11 +21,11 @@ app = Flask(__name__)
 
 # app.config.from_envvar('MTA_SETTINGS')
 
-on_heroku = False
-if 'MTA_KEY' in os.environ:
-    on_heroku = True
-    app.config["MTA_KEY"] = os.environ['MTA_KEY']
-
+# on_heroku = False
+# if 'MTA_KEY' in os.environ:
+#     on_heroku = True
+    
+app.config["MTA_KEY"] = '0c27b93b24a910c2245ff60a57719f84'
 app.config['STATIONS_FILE'] = './stations.json'
 app.config['CROSS_ORIGIN'] = "*"
 app.debug = True;
